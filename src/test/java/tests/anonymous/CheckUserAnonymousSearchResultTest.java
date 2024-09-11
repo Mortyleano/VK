@@ -19,7 +19,7 @@ public class CheckUserAnonymousSearchResultTest extends TestBase {
     @Tag("smoke") @Tag("anonymous") @Tag("search")
     @DisplayName("Тест проверяет результаты анонимного поиска по имени пользователя")
     void userAnonymousSearchResultTest() {
-        open(baseUrl);
+        openSite();
         new MainPage().clickAndSearchRequest(USER_NAME);
         AnonymousSearchPage anonymousSearchPage = new AnonymousSearchPage();
         anonymousSearchPage.clickTabPeople();

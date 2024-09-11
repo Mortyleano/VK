@@ -18,7 +18,7 @@ public class CheckRulesLinkTest extends TestBase {
     @Tag("smoke") @Tag("anonymous") @Tag("links")
     @DisplayName("Тест проверяет открытие страницы с правилами пользования сайта в анонимном режиме")
     void rulesLinkTest() {
-        open(baseUrl);
+        openSite();
         MainPage mainPage = new MainPage();
         mainPage.clickRulesLink();
         assertThat(mainPage.getSubHeaderText())

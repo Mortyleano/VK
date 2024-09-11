@@ -19,7 +19,7 @@ public class CheckGroupAnonymousSearchResultTest extends TestBase {
     @Tag("smoke") @Tag("search") @Tag("anonymous")
     @DisplayName("Тест проверяет результаты анонимного поиска по наименованию группы")
     void groupAnonymousSearchResultTest() {
-        open(baseUrl);
+        openSite();
         new MainPage().clickAndSearchRequest(COMMUNITY_NAME);
         AnonymousSearchPage anonymousSearchPage = new AnonymousSearchPage();
         anonymousSearchPage.clickTabCommunities();

@@ -18,7 +18,7 @@ public class CheckLegalRecommendationsLinkTest extends TestBase {
     @Tag("smoke") @Tag("anonymous") @Tag("links")
     @DisplayName("Тест проверяет открытие страницы с правилами применения рекомендательных технологий сайта в анонимном режиме")
     void legalRecommendationsLinkTest() {
-        open(baseUrl);
+        openSite();
         MainPage mainPage = new MainPage();
         mainPage.clickLegalRecommendationsLink();
         assertThat(mainPage.getSubHeaderText())
