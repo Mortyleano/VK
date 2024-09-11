@@ -18,6 +18,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class TestBase {
 
     @BeforeEach
+    @Step("Устанавливаем конфигурации перед запуском теста")
     public void settingsTest() {
         Configuration.baseUrl = "https://vk.com";
         Configuration.browser = System.getProperty("browser", "chrome");
@@ -35,6 +36,7 @@ public class TestBase {
     }
 
     @AfterEach
+    @Step("Выполняем конфигурации после окончания теста")
     public void settingsAfterTest() {
         Attachments.screenshotAs("Изображение последнего события из теста");
         Attachments.pageSource();
