@@ -7,8 +7,6 @@ import pages.AnonymousSearchPage;
 import pages.MainPage;
 import tests.TestBase;
 
-import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Selenide.open;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CheckGroupAnonymousSearchResultTest extends TestBase {
