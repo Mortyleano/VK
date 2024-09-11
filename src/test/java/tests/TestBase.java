@@ -6,6 +6,7 @@ import io.qameta.allure.Step;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import tests.utils.Attachments;
 
@@ -18,7 +19,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class TestBase {
 
     @BeforeEach
-    @Step("Устанавливаем конфигурации перед запуском теста")
+    @DisplayName("Устанавливаем конфигурации перед запуском теста")
     public void settingsTest() {
         Configuration.baseUrl = "https://vk.com";
         Configuration.browser = System.getProperty("browser", "chrome");
@@ -36,7 +37,7 @@ public class TestBase {
     }
 
     @AfterEach
-    @Step("Выполняем конфигурации после окончания теста")
+    @DisplayName("Выполняем конфигурации после окончания теста")
     public void settingsAfterTest() {
         Attachments.screenshotAs("Изображение последнего события из теста");
         Attachments.pageSource();
