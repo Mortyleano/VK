@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CheckUserAnonymousSearchResultTest extends TestBase {
 
-    private static final String USER_NAME = "Павел Дуров";
+    private static final String USER_NAME = "Pavel Durov";
 
     @Test
     @Tag("smoke") @Tag("anonymous") @Tag("search")
@@ -24,10 +24,10 @@ public class CheckUserAnonymousSearchResultTest extends TestBase {
         AnonymousSearchPage anonymousSearchPage = new AnonymousSearchPage();
         anonymousSearchPage.clickTabPeople();
         assertThat(anonymousSearchPage.getUserName())
-                .as("Отсутствует сообщество в результатах поиска")
+                .as("Отсутствует пользователь в результатах поиска")
                 .contains(USER_NAME);
         assertThat(anonymousSearchPage.getVerifiedPageIcon())
-                .as("Отсутствует галочка верификации возле наименования сообщества")
+                .as("Отсутствует галочка верификации возле имени пользователя")
                 .isTrue();
     }
 }

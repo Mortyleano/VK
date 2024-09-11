@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CheckRulesLinkTest extends TestBase {
 
-    private static final String HEADER_TEXT = "Правила пользования Сайтом ВКонтакте";
+    private static final String HEADER_TEXT = "VK Terms of Service";
 
     @Test
     @Tag("smoke") @Tag("anonymous") @Tag("links")
