@@ -28,12 +28,12 @@
 <a href="https://www.atlassian.com/ru/software/jira" target="_blank"><img width="5%" title="Jira" src="src/test/resources/media/icons/Jira.svg"></a>
 </p>
 
-- В данном проекте автотесты написаны на языке <code>Java</code> с использованием фреймворка для тестирования </code>Selenide</code>.
-- В качестве сборщика был использован - <code>Gradle</code>.
-- Использованы фреймворки <code>JUnit 5</code> и [Selenide](https://selenide.org/).
+- В данном проекте автотесты написаны на языке <code>Java</code> с использованием фреймворка для тестирования <code>Selenide</code>.
+- В качестве сборщика проекта был использован - <code>Gradle</code>.
+- Использованы фреймворки: <code>JUnit 5</code> и [Selenide](https://selenide.org/).
 - При прогоне тестов браузер запускается в [Selenoid](https://selenoid.autotests.cloud/).
-- Для удаленного запуска реализована джоба в <code>Jenkins</code> с формированием Allure-отчета и отправкой результатов в <code>Telegram</code> при помощи бота.
-- Осуществлена интеграция с <code>Allure TestOps</code> и <code>Jira</code>
+- Для удаленного запуска реализована джоба в <code>Jenkins</code> с формированием Allure-отчета и отправкой результатов прогона в <code>Telegram</code> при помощи бота.
+- Реализована интеграция с <code>Allure TestOps</code> и <code>Jira</code>
 
 Содержание Allure-отчета:
 * Шаги теста;
@@ -48,13 +48,13 @@
 ```
 gradle clean test
 ```
-При выполнении команды, данные тесты запустятся удаленно в <code>Selenoid</code>.
+После выполнения команды, автотесты запускаются удаленно в <code>Selenoid</code>.
 
 ### Запуск тестов на удаленном браузере
 ```
 gradle clean test -Denv=main
 ```
-При необходимости также можно переопределить параметры запуска
+При необходимости также можно переопределить параметры запуска:
 
 ```
 clean test -Dtask=${TASK}
@@ -65,11 +65,11 @@ clean test -Dtask=${TASK}
 ```
 ### Параметры сборки
 
-* <code>TASK</code> – запуск автотестов по определенному тегу, которым они отмечены. По-умолчанию - <code>all_test</code>, который запускает все тесты
-* <code>BROWSER</code> – браузер, в котором будут выполняться тесты. По-умолчанию - <code>chrome</code>.
-* <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По-умолчанию - <code>122.0</code>.
-* <code>WINDOW_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По-умолчанию - <code>1920x1080</code>.
-* <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
+* <code>TASK</code> – запуск автотестов по определенному тегу, которым они отмечены. По-умолчанию - <code>all_tests</code>, который запускает все автотесты
+* <code>BROWSER</code> – браузер, в котором будут запускаться автотесты. По-умолчанию - <code>chrome</code>.
+* <code>BROWSER_VERSION</code> – версия браузера, в которой будут запускаться автотесты. По-умолчанию - <code>122.0</code>.
+* <code>WINDOW_SIZE</code> – размер окна браузера, в котором будут запускаться автотесты. По-умолчанию - <code>1920x1080</code>.
+* <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться автотесты.
 
 ## <img src="src/test/resources/media/icons/Jenkins.svg" title="Jenkins" width="4%"/> Сборка в Jenkins
 <p align="center">
@@ -93,7 +93,7 @@ clean test -Dtask=${TASK}
 
 Выполнена интеграция сборки <code>Jenkins</code> с <code>Allure TestOps</code>.  
 Результат выполнения автотестов отображается в <code>Allure TestOps</code>.  
-На Dashboard в <code>Allure TestOps</code> отображена статистика пройденных тестов.
+На <code>Dashboard</code> в <code>Allure TestOps</code> отображена статистика пройденных тестов.
 
 <p align="center">
 <img title="Allure TestOps Dashboard" src="src/test/resources/media/screenshots/AllureTestOps.png">
@@ -101,7 +101,7 @@ clean test -Dtask=${TASK}
 
 ## <img src="src/test/resources/media/icons/Jira.svg" title="Jira" width="4%"/> Интеграция с Jira
 
-Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в тикете отображается информация, какие тест-кейсы были написаны в рамках задачи и результат их прогона.
+Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в тикете отображается информация, какие именно тест-кейсы были реализованы в рамках задачи и результат их прогона.
 
 <p align="center">
 <img title="Jira Task" src="src/test/resources/media/screenshots/Jira-1.png">
@@ -113,7 +113,7 @@ clean test -Dtask=${TASK}
 
 ## <img width="4%" style="vertical-align:middle" title="Telegram" src="src/test/resources/media/icons/Telegram.svg"> Уведомления в Telegram с использованием бота
 
-После завершения сборки, бот созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с результатом.
+После завершения сборки, бот созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с результатом прогона.
 
 <p align="center">
 <img width="70%" title="Telegram Notifications" src="src/test/resources/media/screenshots/TelegramNotification.png">
@@ -121,7 +121,7 @@ clean test -Dtask=${TASK}
 
 ## <img src="src/test/resources/media/icons/Selenoid.svg" title="Jira" width="4%"/> Видео примера запуска тестов в Selenoid
 
-К каждому тесту в отчете прилагается видео прогона.
+К каждому автотесту в Allure-отчете сохраняется видео запуска автотеста после его завершения.
 <p align="center">
   <img title="Selenoid Video" src="src/test/resources/media/screenshots/Video.gif">
 </p>
