@@ -11,18 +11,18 @@
 ## :computer: Использованный стек технологий
 
 <p align="center">
-<img width="6%" title="IntelliJ IDEA" src="src/test/resources/media/icons/IntelijIdea.svg">
-<img width="6%" title="Java" src="src/test/resources/media/icons/Java.svg">
-<img width="6%" title="Selenide" src="src/test/resources/media/icons/Selenide.svg">
-<img width="6%" title="Selenoid" src="src/test/resources/media/icons/Selenoid.svg">
-<img width="6%" title="Allure Report" src="src/test/resources/media/icons/AllureReport.svg">
-<img width="5%" title="Allure TestOps" src="src/test/resources/media/icons/AllureTestOps.svg">
-<img width="6%" title="Gradle" src="src/test/resources/media/icons/Gradle.svg">
-<img width="6%" title="JUnit5" src="src/test/resources/media/icons/JUnit5.svg">
-<img width="6%" title="GitHub" src="src/test/resources/media/icons/Github.svg">
-<img width="6%" title="Jenkins" src="src/test/resources/media/icons/Jenkins.svg">
-<img width="6%" title="Telegram" src="src/test/resources/media/icons/Telegram.svg">
-<img width="5%" title="Jira" src="src/test/resources/media/icons/Jira.svg">
+<a href="https://www.jetbrains.com/idea/" target="_blank"><img width="6%" title="IntelliJ IDEA" src="src/test/resources/media/icons/IntelijIdea.svg"></a>
+<a href="https://www.java.com/ru/" target="_blank"><img width="6%" title="Java" src="src/test/resources/media/icons/Java.svg"></a>
+<a href="https://selenide.org/" target="_blank"><img width="6%" title="Selenide" src="src/test/resources/media/icons/Selenide.svg"></a>
+<a href="https://aerokube.com/selenoid/" target="_blank"><img width="6%" title="Selenoid" src="src/test/resources/media/icons/Selenoid.svg"></a>
+<a href="https://allurereport.org/" target="_blank"><img width="6%" title="Allure Report" src="src/test/resources/media/icons/AllureReport.svg"></a>
+<a href="https://qameta.io/" target="_blank"><img width="5%" title="Allure TestOps" src="src/test/resources/media/icons/AllureTestOps.svg"></a>
+<a href="https://gradle.org/" target="_blank"><img width="6%" title="Gradle" src="src/test/resources/media/icons/Gradle.svg"></a>
+<a href="https://junit.org/junit5/" target="_blank"><img width="6%" title="JUnit5" src="src/test/resources/media/icons/JUnit5.svg"></a>
+<a href="https://github.com/" target="_blank"><img width="6%" title="GitHub" src="src/test/resources/media/icons/Github.svg"></a>
+<a href="https://www.jenkins.io/" target="_blank"><img width="6%" title="Jenkins" src="src/test/resources/media/icons/Jenkins.svg"></a>
+<a href="https://telegram.org/" target="_blank"><img width="6%" title="Telegram" src="src/test/resources/media/icons/Telegram.svg"></a>
+<a href="https://www.atlassian.com/ru/software/jira" target="_blank"><img width="5%" title="Jira" src="src/test/resources/media/icons/Jira.svg"></a>
 </p>
 
 - В данном проекте автотесты написаны на языке <code>Java</code> с использованием фреймворка для тестирования </code>Selenide</code>.
