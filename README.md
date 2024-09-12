@@ -4,14 +4,17 @@
 >
 ## :scroll: Содержание:
 
-- [Использованный стек технологий](#computer-использованный-стек-технологий)
-- [Запуск тестов из терминала](#arrow_forward-запуск-тестов-из-терминала)
-- [Сборка в Jenkins](#сборка-в-jenkins)
-- [Пример Allure-отчета](#пример-allure-отчета)
-- [Уведомления в Telegram с использованием бота](#уведомления-в-telegram-с-использованием-бота)
-- [Видео примера запуска тестов в Selenoid](#-видео-примера-запуска-теста-в-selenoid)
+* <a href="#tools">Использованный стек технологий</a>
+* <a href="#launch">Запуск автотестов</a>
+* <a href="#build">Сборка в Jenkins</a>
+* <a href="#allure">Пример Allure-отчета</a>
+* <a href="#testops">Интеграция с Allure TestOps</a>
+* <a href="#jira">Интеграция с Jira</a>
+* <a href="#notifications">Уведомления в Telegram с использованием бота</a>
+* <a href="#video">Видео примера запуска тестов в Selenoid</a>
 
-## :computer: Использованный стек технологий
+<a id="tools"></a>
+## <a name="Использованный стек технологий"> :computer: **Использованный стек технологий** </a>
 
 <p align="center">
 <a href="https://www.jetbrains.com/idea/" target="_blank"><img width="6%" title="IntelliJ IDEA" src="src/test/resources/media/icons/IntelijIdea.svg"></a>
@@ -42,7 +45,8 @@
 * Логи браузерной консоли;
 * Видео выполнения автотеста
 
-## :arrow_forward: Запуск автотестов
+<a id="launch"></a>
+## <a name="Запуск автотестов"> :arrow_forward: **Запуск автотестов** </a>
 
 ### Запуск тестов из терминала
 ```
@@ -71,12 +75,14 @@ clean test -Dtask=${TASK}
 * <code>WINDOW_SIZE</code> – размер окна браузера, в котором будут запускаться автотесты. По-умолчанию - <code>1920x1080</code>.
 * <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться автотесты.
 
-## <img src="src/test/resources/media/icons/Jenkins.svg" title="Jenkins" width="4%"/> Сборка в Jenkins
+<a id="build"></a>
+## <a name="Сборка в Jenkins"><img src="src/test/resources/media/icons/Jenkins.svg" title="Jenkins" width="4%"/> **Сборка в Jenkins** </a>
 <p align="center">
 <img title="Jenkins Build" src="src/test/resources/media/screenshots/Jenkins.png">
 </p>
 
-## <img src="src/test/resources/media/icons/AllureReport.svg" title="Allure Report" width="4%"/> Пример Allure-отчета
+<a id="allure"></a>
+## <a name="Пример Allure-отчета"><img src="src/test/resources/media/icons/AllureReport.svg" title="Allure Report" width="4%"/> **Пример Allure-отчета** </a>
 ### Overview
 
 <p align="center">
@@ -89,7 +95,8 @@ clean test -Dtask=${TASK}
 <img title="Test Results in Allure" src="src/test/resources/media/screenshots/AllureReport-2.png">
 </p>
 
-## <img src="src/test/resources/media/icons/AllureTestOps.svg" width="4%"/> Интеграция с Allure TestOps
+<a id="testops"></a>
+## <a name="Интеграция с Allure TestOps"><img src="src/test/resources/media/icons/AllureTestOps.svg" width="4%"/> **Интеграция с Allure TestOps** </a>
 
 Выполнена интеграция сборки <code>Jenkins</code> с <code>Allure TestOps</code>.  
 Результат выполнения автотестов отображается в <code>Allure TestOps</code>.  
@@ -99,7 +106,8 @@ clean test -Dtask=${TASK}
 <img title="Allure TestOps Dashboard" src="src/test/resources/media/screenshots/AllureTestOps.png">
 </p>
 
-## <img src="src/test/resources/media/icons/Jira.svg" title="Jira" width="4%"/> Интеграция с Jira
+<a id="jira"></a>
+## <a name="Интеграция с Jira"><img src="src/test/resources/media/icons/Jira.svg" title="Jira" width="4%"/> **Интеграция с Jira** </a>
 
 Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в тикете отображается информация, какие именно тест-кейсы были реализованы в рамках задачи и результат их прогона.
 
@@ -111,7 +119,8 @@ clean test -Dtask=${TASK}
 <img title="Jira Task" src="src/test/resources/media/screenshots/Jira-2.png">
 </p>
 
-## <img width="4%" style="vertical-align:middle" title="Telegram" src="src/test/resources/media/icons/Telegram.svg"> Уведомления в Telegram с использованием бота
+<a id="notifications"></a>
+## <a name="Уведомления в Telegram с использованием бота"><img width="4%" style="vertical-align:middle" title="Telegram" src="src/test/resources/media/icons/Telegram.svg"> **Уведомления в Telegram с использованием бота** </a>
 
 После завершения сборки, бот созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с результатом прогона.
 
@@ -119,7 +128,8 @@ clean test -Dtask=${TASK}
 <img width="70%" title="Telegram Notifications" src="src/test/resources/media/screenshots/TelegramNotification.png">
 </p>
 
-## <img src="src/test/resources/media/icons/Selenoid.svg" title="Jira" width="4%"/> Видео примера запуска тестов в Selenoid
+<a id="video"></a>
+## <a name="Видео примера запуска тестов в Selenoid"><img src="src/test/resources/media/icons/Selenoid.svg" title="Jira" width="4%"/> **Видео примера запуска тестов в Selenoid** </a>
 
 К каждому автотесту в Allure-отчете сохраняется видео запуска автотеста после его завершения.
 <p align="center">
