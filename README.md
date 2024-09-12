@@ -38,7 +38,7 @@
 - Для удаленного запуска реализована джоба в <code>Jenkins</code> с формированием Allure-отчета и отправкой результатов прогона в <code>Telegram</code> при помощи бота.
 - Реализована интеграция с <code>Allure TestOps</code> и <code>Jira</code>
 
-Содержание Allure-отчета:
+### Содержание Allure-отчета:
 * Шаги теста;
 * Скриншот страницы на последнем шаге;
 * Page Source;
@@ -58,7 +58,7 @@ gradle clean test
 ```
 gradle clean test -Denv=main
 ```
-При необходимости также можно переопределить параметры запуска:
+### При необходимости также можно переопределить параметры запуска:
 
 ```
 clean test -Dtask=${TASK}
@@ -98,9 +98,9 @@ clean test -Dtask=${TASK}
 <a id="testops"></a>
 ## <a name="Интеграция с Allure TestOps"><img src="src/test/resources/media/icons/AllureTestOps.svg" width="4%"/> **Интеграция с Allure TestOps** </a>
 
-Выполнена интеграция сборки <code>Jenkins</code> с <code>Allure TestOps</code>.  
-Результат выполнения автотестов отображается в <code>Allure TestOps</code>.  
-На <code>Dashboard</code> в <code>Allure TestOps</code> отображена статистика пройденных тестов.
+- Выполнена интеграция сборки <code>Jenkins</code> с <code>Allure TestOps</code>. 
+- Результат выполнения автотестов отображается в <code>Allure TestOps</code>. 
+- На <code>Dashboard</code> в <code>Allure TestOps</code> отображена статистика пройденных тестов.
 
 <p align="center">
 <img title="Allure TestOps Dashboard" src="src/test/resources/media/screenshots/AllureTestOps.png">
