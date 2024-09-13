@@ -8,19 +8,20 @@ import tests.TestBase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@DisplayName("Проверка открытия страницы с правилами применения рекомендательных технологий сайта в анонимном режиме")
 public class CheckLegalRecommendationsLinkTest extends TestBase {
 
     private static final String HEADER_TEXT = "Правила применения рекомендательных технологий социальной сети ВКонтакте";
 
     @Test
     @Tag("smoke") @Tag("anonymous") @Tag("links")
-    @DisplayName("Тест проверяет открытие страницы с правилами применения рекомендательных технологий сайта в анонимном режиме")
+    @DisplayName("Проверяет открытие страницы с правилами применения рекомендательных технологий сайта в анонимном режиме")
     void legalRecommendationsLinkTest() {
-        openSite();
         MainPage mainPage = new MainPage();
+        mainPage.openMainPage();
         mainPage.clickLegalRecommendationsLink();
         assertThat(mainPage.getSubHeaderText())
-                .as("Отсутствует ожидаемый подзаголовок страницы")
-                .contains(HEADER_TEXT);
+                .contains(HEADER_TEXT)
+                .as("Отсутствует ожидаемый подзаголовок страницы");
     }
 }

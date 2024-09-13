@@ -7,20 +7,18 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import tests.utils.Attachments;
+import utils.Attachments;
 
 import java.util.Map;
 
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
     @BeforeEach
     @Step("Устанавливаем конфигурации перед запуском теста")
     public void settingsTest() {
-        Configuration.baseUrl = "https://vk.com";
+        Configuration.baseUrl = System.getProperty("baseUrl", "https://vk.com");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "122");
         Configuration.browserSize = System.getProperty("windowSize", "1920x1080");
@@ -43,10 +41,5 @@ public class TestBase {
         Attachments.browserConsoleLogs();
         Attachments.addVideo();
         closeWebDriver();
-    }
-
-    @Step("Открываем главную страницу сайта VK.com")
-    public void openSite() {
-        open(baseUrl);
     }
 }

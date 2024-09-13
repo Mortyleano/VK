@@ -8,16 +8,17 @@ import tests.TestBase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@DisplayName("Проверка открытия страницы с правилами пользования сайта в анонимном режиме")
 public class CheckRulesLinkTest extends TestBase {
 
     private static final String HEADER_TEXT = "VK Terms of Service";
 
     @Test
     @Tag("smoke") @Tag("anonymous") @Tag("links")
-    @DisplayName("Тест проверяет открытие страницы с правилами пользования сайта в анонимном режиме")
+    @DisplayName("Проверяет открытие страницы с правилами пользования сайта в анонимном режиме")
     void rulesLinkTest() {
-        openSite();
         MainPage mainPage = new MainPage();
+        mainPage.openMainPage();
         mainPage.clickRulesLink();
         assertThat(mainPage.getSubHeaderText())
                 .as("Отсутствует ожидаемый подзаголовок страницы")

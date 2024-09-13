@@ -9,23 +9,25 @@ import tests.TestBase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@DisplayName("Проверка результатов анонимного поиска по имени пользователя")
 public class CheckUserAnonymousSearchResultTest extends TestBase {
 
     private static final String USER_NAME = "Pavel Durov";
 
     @Test
     @Tag("smoke") @Tag("anonymous") @Tag("search")
-    @DisplayName("Тест проверяет результаты анонимного поиска по имени пользователя")
+    @DisplayName("Проверяет результаты анонимного поиска по имени пользователя")
     void userAnonymousSearchResultTest() {
-        openSite();
-        new MainPage().clickAndSearchRequest(USER_NAME);
+        MainPage mainPage = new MainPage();
+        mainPage.openMainPage();
+        mainPage.clickAndSearchRequest(USER_NAME);
         AnonymousSearchPage anonymousSearchPage = new AnonymousSearchPage();
         anonymousSearchPage.clickTabPeople();
         assertThat(anonymousSearchPage.getUserName())
-                .as("Отсутствует пользователь в результатах поиска")
-                .contains(USER_NAME);
+                .contains(USER_NAME)
+                .as("Отсутствует пользователь в результатах поиска");
         assertThat(anonymousSearchPage.getVerifiedPageIcon())
-                .as("Отсутствует галочка верификации возле имени пользователя")
-                .isTrue();
+                .isTrue()
+                .as("Отсутствует галочка верификации возле имени пользователя");
     }
 }

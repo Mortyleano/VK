@@ -9,23 +9,25 @@ import tests.TestBase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@DisplayName("Проверка результатов анонимного поиска по наименованию группы")
 public class CheckGroupAnonymousSearchResultTest extends TestBase {
 
     private static final String COMMUNITY_NAME = "Пикабу";
 
     @Test
     @Tag("smoke") @Tag("search") @Tag("anonymous")
-    @DisplayName("Тест проверяет результаты анонимного поиска по наименованию группы")
+    @DisplayName("Проверяет результаты анонимного поиска по наименованию группы")
     void groupAnonymousSearchResultTest() {
-        openSite();
-        new MainPage().clickAndSearchRequest(COMMUNITY_NAME);
+        MainPage mainPage = new MainPage();
+        mainPage.openMainPage();
+        mainPage.clickAndSearchRequest(COMMUNITY_NAME);
         AnonymousSearchPage anonymousSearchPage = new AnonymousSearchPage();
         anonymousSearchPage.clickTabCommunities();
         assertThat(anonymousSearchPage.getCommunityName())
-                .as("Отсутствует сообщество в результатах поиска")
-                .contains(COMMUNITY_NAME);
+                .contains(COMMUNITY_NAME)
+                .as("Отсутствует сообщество в результатах поиска");
         assertThat(anonymousSearchPage.getVerifiedPageIcon())
-                .as("Отсутствует галочка верификации возле наименования сообщества")
-                .isTrue();
+                .isTrue()
+                .as("Отсутствует галочка верификации возле наименования сообщества");
     }
 }
